@@ -54,45 +54,17 @@
             "properties": {
                 "securityRules": [
                     {
-                        "name": "Allow-SSH-SingleIP",
+                        "name": "Allow-All-Inbound",
                         "properties": {
                             "priority": 100,
-                            "protocol": "Tcp",
-                            "access": "Allow",
-                            "direction": "Inbound",
-                            "sourceAddressPrefix": "[parameters('allowedIPAddress')]",
-                            "sourcePortRange": "*",
-                            "destinationAddressPrefix": "*",
-                            "destinationPortRange": "22",
-                            "description": "Allow SSH from one IP only"
-                        }
-                    },
-                    {
-                        "name": "Allow-HTTP-SingleIP",
-                        "properties": {
-                            "priority": 110,
-                            "protocol": "Tcp",
-                            "access": "Allow",
-                            "direction": "Inbound",
-                            "sourceAddressPrefix": "[parameters('allowedIPAddress')]",
-                            "sourcePortRange": "*",
-                            "destinationAddressPrefix": "*",
-                            "destinationPortRange": "80",
-                            "description": "Allow HTTP from one IP only"
-                        }
-                    },
-                    {
-                        "name": "Deny-All-Inbound",
-                        "properties": {
-                            "priority": 4096,
                             "protocol": "*",
-                            "access": "Deny",
+                            "access": "Allow",
                             "direction": "Inbound",
                             "sourceAddressPrefix": "*",
                             "sourcePortRange": "*",
                             "destinationAddressPrefix": "*",
                             "destinationPortRange": "*",
-                            "description": "Deny all other inbound traffic"
+                            "description": "Allow all inbound traffic"
                         }
                     }
                 ]
